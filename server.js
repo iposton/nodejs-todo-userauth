@@ -1,11 +1,22 @@
-import express from 'express'; 
+import express from 'express';
+import routes from "./routes/index.js";
+import morgan from 'morgan';
+import cors from 'cors';
 
 const app = express();
 
-app.get('/', function(req, res) {
- res.send('my todo app')
-})
+app.use(morgan('dev'));
+app.use(cors());
 
-app.listen("4000", () => {
-    console.log("app listening on port 4000");
+app.use(routes);
+
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).send(err.message);
+});
+
+const port = process.env['PORT'] || 4000;
+
+app.listen(port, () => {
+    console.log(`app listening on port ${port}`);
 });
