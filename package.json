@@ -1,0 +1,15 @@
+{
+  "name": "desktop",
+  "version": "1.0.0",
+  "description": "todo and user auth app",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ian Poston",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.0.0-beta.1"
+  }
+}
