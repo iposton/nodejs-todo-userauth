@@ -1,5 +1,5 @@
 {
-  "name": "desktop",
+  "name": "todos-api",
   "version": "1.0.0",
   "description": "todo and user auth app",
   "main": "server.js",
@@ -12,6 +12,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.0.0-beta.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "uuid": "^9.0.1"
   }
 }
