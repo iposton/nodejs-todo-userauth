@@ -24,11 +24,12 @@ store.read().then(
 
 export function getTodos(sort) {
   let todos = Array.from(TODOS.values());
+  let seconds = (date) => (new Date(date).getTime() / 1000)
   todos.sort((a, b) => {
     if (sort === "asc") {
-        return a.lastEdited - b.lastEdited;
+        return seconds(a.lastEdited) - seconds(b.lastEdited);
     } else {
-        return b.lastEdited - a.lastEdited;
+        return seconds(b.lastEdited) - seconds(a.lastEdited);
     }
   });
   return todos

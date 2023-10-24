@@ -4,11 +4,11 @@ This is an API that creates, reads, updates, and destroys todos sent from my [an
 
 ## Software used
 
-Express.js  version 5.0.0-beta.1
-Node.js version 18.10.0
-Morgan version 1.10.0
-uuid version 9.0.1
-cors version 2.8.5 
+  * Express.js  version 5.0.0-beta.1
+  * Node.js version 18.10.0
+  * Morgan version 1.10.0
+  * uuid version 9.0.1
+  * cors version 2.8.5 
 
 ## Install and serve the app
 
