@@ -12,7 +12,6 @@ const users = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', l
 // };
 
 export async function authenticate({ username, password }) {
-    console.log('model auth user function called')
     const user = users.find(u => u.username === username && u.password === password);
 
     if (!user) throw 'Username or password is incorrect';

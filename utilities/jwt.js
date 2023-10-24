@@ -2,8 +2,6 @@ import { readFile } from 'fs/promises';
 import { expressjwt } from 'express-jwt';
 const config = JSON.parse(await readFile(new URL('../config.json', import.meta.url)));
 
-//module.exports = jwt;
-
 export function jwt() {
     const { secret } = config;
     return expressjwt({ secret, algorithms: ['HS256'] }).unless({
