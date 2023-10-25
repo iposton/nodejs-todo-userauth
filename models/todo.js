@@ -6,6 +6,7 @@ import MapStore from "../maps/mapstore.js";
 //  id: string
 //  task: string
 //  completed: boolean
+//  belongsToID: string
 //  lastEdited: Date
 // }
 const TODOS = new Map();
@@ -35,13 +36,14 @@ export function getTodos(sort) {
   return todos
 }
 
-export async function createTodo({ task, completed }) {
+export async function createTodo({ task, completed, belongsToID }) {
     const id = uuid();
     const lastEdited = new Date();
     const todo = {
       id,
       task,
       completed,
+      belongsToID,
       lastEdited
     };
     TODOS.set(id, todo);
@@ -49,13 +51,14 @@ export async function createTodo({ task, completed }) {
     return todo;
 }
 
-export async function updateTodo(id, { task, completed }) {
+export async function updateTodo(id, { task, completed, belongsToID }) {
     if (!TODOS.has(id)) {
       return null;
     }
     const todo = TODOS.get(id);
     todo.task = task ?? todo.task;
     todo.completed = completed ?? todo.completed;
+    todo.belongsToID = belongsToID ?? todo.belongsToID;
     todo.lastEdited = new Date();
     await store.save(TODOS);
     return { ...todo };

@@ -16,7 +16,7 @@ class MapStore {
   async read() {
     console.log(`reading from ${this.filepath}`);
     const data = await readFile(this.filepath, "utf-8");
-    const parsed = JSON.parse(data);
+    const parsed = data != null ? JSON.parse(data) : [];
     return new Map(parsed);
   }
 }
