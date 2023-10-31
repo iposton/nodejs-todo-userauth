@@ -19,4 +19,16 @@ This is an API that creates, reads, updates, and destroys todos sent from my [an
 
 You can interact with the API by going to http://localhost:4000 on your machine. The terminal will log the information and success or error status of each API request.
 
+## App Secret
+
+Create a file named `config.json`. This will be where you write the jwt secret. This file is in the `gitignore` to avoid pushing the secret public to github.
+
+```json
+
+{
+    "secret": "ANY_SECRET"
+}
+
+```
+
 
